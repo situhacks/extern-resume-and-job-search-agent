@@ -31,16 +31,20 @@ everything modern, and for holding the one-page layout, PDF wins. (`skills/cv/re
 4. Write the filled HTML next to the markdown, same version number, in the flat folder:
    `workspace/applications/{company}-{role}/cv-v{n}.html` (and `cover-letter-v{n}.html`).
 5. **Auto-render the PDF into the same folder** using a browser the user already has (the kit ships none of its own):
-   - Find one — first that exists:
+   - **Preferred**: Run the automated helper script from the workspace root:
+     ```bash
+     node scripts/export_pdf.mjs workspace/applications/{company}-{role}/cv-v{n}.html
+     node scripts/export_pdf.mjs workspace/applications/{company}-{role}/cover-letter-v{n}.html
+     ```
+     This script handles platform detection, browser discovery (Chrome or Edge), directory creation, and CLI argument quoting automatically.
+   - **Alternative (manual CLI execution)**: Find an installed browser and run the headless print command:
      - Windows: `C:\Program Files\Google\Chrome\Application\chrome.exe` · `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`
-     - macOS: `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome` · `…/Microsoft Edge.app/Contents/MacOS/Microsoft Edge`
-     - Linux: `which google-chrome chromium msedge`
-   - Run headless print-to-pdf (no header/footer, so the PDF is submission-clean):
-     `"<browser>" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="<folder>/cv-v{n}.pdf" "file:///<abs-path>/cv-v{n}.html"`
-     (On Windows use a `file:///C:/…` URL with forward slashes and spaces as `%20`; add `--no-sandbox` if it errors.)
-   - Confirm the `.pdf` was written. **If no browser is found,** fall back to manual print and tell the user:
-     > Open `cv-v{n}.html` in any browser → **Ctrl/Cmd + P** → **Save as PDF** → Margins **Default** →
-     > **uncheck "Headers and footers"** → save it into this application folder. That PDF is what you submit.
+     - macOS: `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`
+     - Linux: `google-chrome` · `chromium`
+     - Command:
+       `"<browser>" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="<folder>/cv-v{n}.pdf" "file:///<abs-path>/cv-v{n}.html"`
+       (On Windows, use a `file:///C:/…` URL with forward slashes and spaces as `%20`; add `--no-sandbox` if it errors.)
+   - **Fallback (manual print)**: If no browser is found, open `cv-v{n}.html` in any browser → **Ctrl/Cmd + P** → **Save as PDF** → Margins **Default** → **uncheck "Headers and footers"** → save it into this application folder.
 6. When the user submits, set the tracker's `Shipped` to this version (`application-tracker`) — it maps to `cv-v{n}.pdf`.
 
 ## Path B — Google Doc (only if Composio/native Docs is connected)

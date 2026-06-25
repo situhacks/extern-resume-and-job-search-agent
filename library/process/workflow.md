@@ -64,4 +64,4 @@ graph TD
 *   **Artifacts**:
     *   `workspace/applications/{company}-{role}/cv-v1.html` and `cv-v1.pdf` (Rendered using the ATS-safe HTML template).
     *   `workspace/applications/{company}-{role}/cover-letter-v1.html` and `cover-letter-v1.pdf`.
-*   **Action**: Run the `doc-export` skill to create the HTML/Word files, guide the user to print to PDF from their browser, and update `tracker.md` to `status: applied`.
+*   **Action**: Run the `doc-export` skill to create the HTML/Word files, use `scripts/export_pdf.mjs` to automatically compile them to PDF (or fall back to browser print-to-PDF manually), and update `tracker.md` to `status: applied`.
