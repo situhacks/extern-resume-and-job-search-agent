@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Resume — Priya Raman</title>
+<style>
+  @page { size: letter; margin: 0.6in; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 10.5pt;
+    line-height: 1.2;
+    color: #000;
+    margin: 0;
+    text-align: left;
+  }
+  main { display: block; width: 100%; }
+
+  header { text-align: center; margin-bottom: 10px; }
+  header .name { font-size: 18pt; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+  header .contact { font-size: 10pt; margin-top: 2px; }
+
+  h2 {
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    margin: 11px 0 5px;
+  }
+
+  .entry { margin-bottom: 7px; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .org { font-weight: bold; }
+  .role { font-style: italic; }
+  .meta { white-space: nowrap; padding-left: 12px; }
+
+  .label { font-style: italic; margin: 3px 0 1px; }
+  .project { font-weight: bold; margin-top: 4px; }
+
+  ul { margin: 1px 0 0; padding-left: 17px; }
+  li { margin-bottom: 2px; }
+
+  .skills p { margin: 2px 0; }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <div class="name">Priya Raman</div>
+    <div class="contact">priya.raman@email.com &nbsp;|&nbsp; linkedin.com/in/priyaraman &nbsp;|&nbsp; (416) 555-0142 &nbsp;|&nbsp; Toronto, ON &nbsp;|&nbsp; github.com/priyaraman</div>
+  </header>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="row"><span class="org">University of Toronto — Rotman Commerce</span><span class="meta">Toronto, ON</span></div>
+      <div class="row"><span class="role">Bachelor of Commerce | Specialist in Finance &amp; Economics</span><span class="meta">Expected June 2027</span></div>
+      <ul>
+        <li>Dean's List (2024, 2025) · Entrance Scholarship</li>
+        <li>Case Competition Circuit: Finalist at 2 national undergraduate business case competitions; led quantitative sections.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Professional &amp; Leadership Experience</h2>
+    <div class="entry">
+      <div class="row"><span class="org">Sobeys</span><span class="meta">Mississauga, ON</span></div>
+      <div class="row"><span class="role">Supply Chain Analyst Intern</span><span class="meta">May 2025 – August 2025</span></div>
+      <ul>
+        <li><strong>Operational Throughput Optimization:</strong> Analyzed regional distribution-centre throughput across 3 regions; isolated a critical hand-off delay and designed a SQL-backed routing change projected to cut average lead time by 12%.</li>
+        <li><strong>Data Synthesis &amp; Dashboards:</strong> Wrote SQL queries to join and clean shipment, inventory, and labor tables; compiled findings into a Tableau dashboard used by 5 regional operations managers.</li>
+        <li><strong>Client &amp; Staff Engagement:</strong> Interviewed 10 warehouse operators and district coordinators to map workflows and ground quantitative modeling assumptions.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="row"><span class="org">Rotman Commerce Consulting Group</span><span class="meta">Toronto, ON</span></div>
+      <div class="row"><span class="role">Project Lead (Student-run)</span><span class="meta">September 2025 – Present</span></div>
+      <ul>
+        <li><strong>Boutique Growth Strategy:</strong> Led a 3-person consulting team on an 8-week market-entry engagement for a regional food-delivery startup; formulated MECE issue trees to structure workstreams.</li>
+        <li><strong>Quantitative Modeling:</strong> Built a bottoms-up demand model (demographics → addressable households → order frequency) that anchored the final geographic expansion recommendation.</li>
+        <li><strong>Stakeholder Management:</strong> Managed weekly client check-ins and presented a 20-slide final recommendation deck to the founding leadership team.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="row"><span class="org">TD Bank</span><span class="meta">Toronto, ON</span></div>
+      <div class="row"><span class="role">Retail Operations Co-op</span><span class="meta">May 2024 – August 2024</span></div>
+      <ul>
+        <li><strong>Process Review:</strong> Mapped the branch account-opening workflow and flagged 3 redundant steps, reducing average cycle time.</li>
+        <li><strong>Performance Reporting:</strong> Compiled weekly operational and financial performance reporting metrics for the district manager.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects &amp; Technical Leadership</h2>
+    <div class="entry">
+      <div class="project">AI-for-Research (Open Source Project) — Developer</div>
+      <ul>
+        <li>Built and open-sourced an AI-native workflow tool that queries APIs to generate cited company research briefs on GitHub: <a href="https://github.com/priyaraman/ai-for-research">github.com/priyaraman/ai-for-research</a>.</li>
+        <li>Deployed a working web-based live demo on Vercel: <a href="https://ai-for-research-demo.vercel.app">ai-for-research-demo.vercel.app</a>.</li>
+        <li>Contributed to and merged 3 feature pull requests in the parent <code>ai-agent-framework</code> repository (1200+ stars).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Skills &amp; Frameworks</h2>
+    <p><strong>Tools &amp; Languages:</strong> SQL (PostgreSQL), Tableau, Excel (Financial Modeling), Python, Git</p>
+    <p><strong>Business Frameworks:</strong> MECE, Market Entry, Operational Efficiency, Issue Trees</p>
+    <p><strong>AI Tooling:</strong> Claude API, ChatGPT, Perplexity, Prompt Engineering</p>
+  </section>
+
+</main>
+</body>
+</html>
