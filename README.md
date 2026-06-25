@@ -1,7 +1,7 @@
 # Extern: Resume & Job Search Agent
 
 <p align="center">
-  <img src=".github/readme-assets/banner-v2.png" alt="Extern: Resume & Job Search Agent" width="100%" />
+  <img src=".github/readme-assets/banner-v3.png" alt="Extern: Resume & Job Search Agent" width="100%" />
 </p>
 
 > **A personalized workspace and tailoring engine that lives inside your AI coding agent.** Tailor your resume, generate cover letters in your voice, research target companies, run strict mock ATS evaluations, and track your applications.
