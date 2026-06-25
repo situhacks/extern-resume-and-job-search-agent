@@ -1,0 +1,46 @@
+# AgentFrame Consulting Prep — .gitignore
+#
+# Purpose: keep COPYRIGHTED case content out of GitHub. The system/shape/structure stays;
+# the case bodies (and original PDFs) never get pushed. They DO ship in the zip handed to students.
+#
+# What stays in GitHub: the tracker (shows how cases work), the README, all skills, scaffolding.
+# What's excluded: every case body in library/cases/ except the tracker + README.
+
+# --- Copyrighted case content (NEVER push) ---
+# Ignore everything in library/cases/ ...
+library/cases/*
+# ... but keep the structure-bearing, publishable files:
+!library/cases/.gitkeep
+!library/cases/README.md
+!library/cases/case-tracker.EXAMPLE.md
+#
+# NOTE: the REAL case-tracker.md is intentionally NOT un-ignored. It indexes the full list of
+# copyrighted cases (titles, firms, locators), so it stays local and ships in the student zip —
+# only case-tracker.EXAMPLE.md (fictional rows) is public. Same pattern as master-cv.EXAMPLE.md.
+#
+# Also gitignored (ship in the zip, never on GitHub):
+#   library/cases/markdown/   — the 275 converted per-case files
+#   library/cases/originals/  — the source casebook PDFs
+
+# --- Source files with real personal info (never push) ---
+_source-do-not-ship/
+
+# --- Secrets (NEVER push) ---
+.env
+
+# --- The student case bundle (copyrighted content; hand out separately, NEVER push) ---
+mccp-case-bundle.zip
+*-case-bundle.zip
+
+# --- Scratch / stress-test artifacts ---
+_stress-test/
+# node_modules IS vendored (pure-JS docx-js, no native binaries) so .docx generation works out of the box.
+
+# --- Build / cache cruft ---
+__pycache__/
+*.pyc
+
+# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+.obsidian/

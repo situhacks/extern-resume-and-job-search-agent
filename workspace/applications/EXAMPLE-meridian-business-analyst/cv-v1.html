@@ -1,0 +1,155 @@
+<!--
+  ATS-safe consulting one-page resume template — tuned for new-grad / student candidates (the primary users).
+  The agent fills the <body> from the polished cv.md, keeping the <style> block EXACTLY as-is.
+  The user then opens the file in a browser and prints to PDF (see doc-export/SKILL.md):
+    Ctrl/Cmd+P → Destination: Save as PDF → Margins: Default → UNCHECK "Headers and footers" → Save.
+
+  This is a REFERENCE PALETTE, not a fixed layout. Below are the common sections a candidate might have —
+  USE THE ONES THAT APPLY, in the ORDER THAT FITS THIS CANDIDATE AND JD. The agent decides; the template
+  just shows the building blocks and how to style each ATS-safely.
+
+  Available sections (pick + order to fit):
+    • EDUCATION — for a student/new-grad this is the headline: school, program, expected grad, GPA (if >3.5),
+      relevant coursework, honors/scholarships, study abroad. Default it NEAR THE TOP for students.
+    • EXPERIENCE — co-ops, internships, part-time, full-time. Reverse chronological. Use the company → role →
+      bullets pattern; for a consulting-style entry you can nest named projects under a role (see the second
+      example entry's "Highlighted Project Experience" pattern if the candidate has it).
+    • LEADERSHIP & ACTIVITIES — clubs, exec roles, CASE COMPETITIONS, varsity, volunteering. For consulting
+      new-grads this is a top-tier section (case-comp wins and club leadership are real signal) — don't bury it.
+    • PROJECTS / APPLIED AI — independent builds, research, applied-AI work. Promote HIGH if the JD values it.
+    • SKILLS & CERTIFICATIONS — tools, methods, certs, languages, interests (one line).
+  An experienced candidate (~2+ yrs full-time) flips to EXPERIENCE first, EDUCATION lower — same building blocks.
+
+  Design rules baked in (from the ATS research — do not "improve" these into a fancier layout):
+    • SINGLE COLUMN only. No tables, no CSS grid/flex columns, no sidebars — multi-column breaks ATS parsing.
+    • No icons, no skill bars, no images — they're invisible to parsers and corrupt nearby text.
+    • Standard fonts only. DOM order == reading order, so never reposition with absolute/float.
+    • All content lives in <main> — nothing critical in headers/footers (parsers strip those).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Resume</title>
+<style>
+  @page { size: letter; margin: 0.6in; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, "Times New Roman", Times, serif; /* swap to: Arial, Helvetica, sans-serif; if preferred */
+    font-size: 10.5pt;
+    line-height: 1.2;
+    color: #000;
+    margin: 0;
+    text-align: left;            /* never justify — browsers can't hyphenate well, leaves "rivers" */
+  }
+  main { display: block; width: 100%; }
+
+  header { text-align: center; margin-bottom: 10px; }
+  header .name { font-size: 18pt; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+  header .contact { font-size: 10pt; margin-top: 2px; }  /* LinkedIn as FULL TEXT — resumes get printed */
+
+  h2 {
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    margin: 11px 0 5px;
+  }
+
+  .entry { margin-bottom: 7px; }
+  /* flex space-between aligns title left / location|dates right ON ONE LINE without using a <table> */
+  .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .org { font-weight: bold; }
+  .role { font-style: italic; }
+  .meta { white-space: nowrap; padding-left: 12px; }
+
+  .label { font-style: italic; margin: 3px 0 1px; }     /* "Highlighted Project Experience:" */
+  .project { font-weight: bold; margin-top: 4px; }       /* named project / activity sub-header */
+
+  ul { margin: 1px 0 0; padding-left: 17px; }
+  li { margin-bottom: 2px; }
+
+  .skills p { margin: 2px 0; }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- ============ FILL FROM HERE DOWN (this is example content — replace with the user's cv.md) ============ -->
+
+  <header>
+    <div class="name">Priya Raman</div>
+    <div class="contact">priya.raman@email.com &nbsp;|&nbsp; linkedin.com/in/priyaraman &nbsp;|&nbsp; (778) 555-0142 &nbsp;|&nbsp; Vancouver, BC</div>
+  </header>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="row"><span class="org">Simon Fraser University — Beedie School of Business</span><span class="meta">Burnaby, BC</span></div>
+      <div class="row"><span class="role">Bachelor of Business Administration — Joint Major, Business &amp; Computing Science</span><span class="meta">Expected 2027</span></div>
+      <ul>
+        <li>GPA 3.8/4.33 · Dean's Honour Roll (2024, 2025) · Beedie Entrance Scholarship</li>
+        <li>Relevant coursework: Strategy, Managerial Economics, Financial Modelling, Data &amp; Decisions, Operations Management</li>
+        <li>Selected for the SFU Management Consulting Club Project (MCCP) — competitive case-method cohort</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="entry">
+      <div class="row"><span class="org">Pacific Blue Cross</span><span class="meta">Burnaby, BC</span></div>
+      <div class="row"><span class="role">Strategy &amp; Operations Co-op (8 months)</span><span class="meta">Jan 2025 – Aug 2025</span></div>
+      <ul>
+        <li>Analyzed claims-processing throughput across 3 lines of business, isolated the slowest hand-off, and modelled a routing change projected to cut average turnaround ~12% — presented to the VP of Operations.</li>
+        <li>Built a self-serve dashboard adopted by 4 regional managers for their weekly operations review, replacing a manual spreadsheet that took a day to compile.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="row"><span class="org">Vancity Credit Union</span><span class="meta">Vancouver, BC</span></div>
+      <div class="row"><span class="role">Member Services Analyst (part-time, during studies)</span><span class="meta">May 2024 – Dec 2024</span></div>
+      <ul>
+        <li>Surfaced a recurring drop-off in the digital onboarding flow from 1,500+ member interactions and proposed three fixes, one of which was piloted branch-wide.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Leadership &amp; Activities</h2>
+    <div class="entry">
+      <div class="project">VP Casework — SFU Beedie Consulting Group</div>
+      <ul>
+        <li>Trained a 20-person cohort on issue-tree structuring and market sizing; ran weekly mock cases and built the club's first reusable case-prep library.</li>
+      </ul>
+      <div class="project">National Undergraduate Case Competitions — Finalist ×2</div>
+      <ul>
+        <li>Led the quantitative section (market sizing + profitability) for a 4-person team; top-4 finish at two national competitions against 30+ schools.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects &amp; Applied AI</h2>
+    <div class="entry">
+      <div class="project">CaseForge — Self-improving case-interview coach on a markdown agent harness</div>
+      <ul>
+        <li>Built a feedback-routing system that folds each correction into the right layer (rubric, voice, or prompt); across 12 practice sessions, structured-scoring accuracy rose from 60% to 90%.</li>
+        <li>Architected it to load only the files each task needs, cutting tokens per session ~10× and keeping practice runs effectively free on a student budget.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Skills &amp; Certifications</h2>
+    <p><strong>Analysis &amp; Tools:</strong> Excel (financial modelling), SQL, Python, Tableau, Power BI</p>
+    <p><strong>Methods:</strong> Market sizing, issue trees / MECE, profitability &amp; market-entry frameworks</p>
+    <p><strong>Certifications:</strong> Google Data Analytics · Bloomberg Market Concepts (BMC)</p>
+    <p><strong>Languages &amp; Interests:</strong> English, Cantonese (conversational) | Competitive rowing | Teaching financial literacy to high-schoolers</p>
+  </section>
+
+  <!-- ============ END FILL ============ -->
+
+</main>
+</body>
+</html>
