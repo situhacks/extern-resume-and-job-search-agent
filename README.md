@@ -14,9 +14,9 @@
 
 ## What this is (and isn't)
 
-This is a **starting template** for running your job search like a product. Instead of using generic prompt packs or paying for subscription-based resume wrappers, this repository provides a file-native, prompt-open system. You have direct access to every skill (saved in `skills/`), which means you can edit, break, and customize the agent's behavior.
+This is a **work-in-progress starter kit** built specifically for the **Extern cohort / members** to run their job search like a product. Instead of using generic prompt templates or renting subscription-based resume wrappers, this repository provides an open, file-native agent harness. You have direct, transparent access to every skill prompt (saved in `skills/`), meaning you can edit, customize, and extend the agent's behaviors as needed.
 
-The gap between a basic prompt and a personalized agent is where the learning happens. By customizing the skills, refining your voice profile, and tweaking the verification rules, you build a custom tool that you own and can discuss in interviews as a portfolio piece showing you can build and direct real AI systems.
+**This is a starting point, not a finished product.** The gap between a basic prompt and a personalized, production-grade agent is where the learning happens. As an Extern member, you are expected to take this template, customize the tailoring rules, expand the verification checklist, build your own custom voice profile, and extend the agent with new skills. By shaping the system yourself, you build a proprietary tool that you own and can discuss in interviews as concrete proof of your ability to build and orchestrate AI agents.
 
 ---
 
@@ -92,14 +92,15 @@ extern-resume-and-job-search-agent/
 ├── README.md
 ├── .env.example              # Optional Composio keys
 ├── library/
-│   ├── context/              # Your CV, stories, voice profiles, target positioning
+│   ├── context/              # Your CV, stories, voice profiles, target positioning (ships as empty FILL-ME stubs)
 │   └── process/
 │       └── workflow.md       # The 7-step pipeline definition
 ├── skills/                   # Tailoring, research, verifier, learn, and export prompts
 └── workspace/
     └── applications/
-        ├── tracker.md        # The application tracking funnel (status: target, researching, tailored, verified, applied)
-        └── EXAMPLE-meridian-business-analyst/ # Sample tailored application folder
+        ├── tracker.EXAMPLE.md # Reference funnel tracking dashboard
+        ├── EXAMPLE-meridian-business-analyst/ # Reference tailored application (undergrad finance/economics role)
+        └── EXAMPLE-vanguard-analyst/          # Reference tailored, verified, and PDF-exported application (operations role)
 ```
 
 ---
@@ -121,3 +122,7 @@ Connect **Composio** to allow the agent to interface with your Google Docs, Gmai
 ## License
 
 **MIT** — see [LICENSE](LICENSE) for details. Helper libraries (`skills/docx/` and `skills/humanizer/`) carry their respective open-source licenses.
+
+---
+
+*Built for the Extern cohort — take it, build it, and make it your own.*
